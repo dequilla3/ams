@@ -14,10 +14,13 @@ class Appointment extends Model
         'appointment_date',
         'appointment_time',
         'created_by_id',
+        'created_at',
+        'updated_at',
     ];
 
     // Define the relationship with the User model (assuming a user can have many appointments)
-    public function user()
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
